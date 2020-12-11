@@ -1,4 +1,14 @@
 ---
 # vars file for deploy-db
-pgs_data_dir: /var/lib/pgsql/data
-postgresql_user: postgres
+postgres_users:
+  - name: appuser
+    password: redhat
+    database: app_db
+    state: present
+    priv: ALL
+
+postgres_databases:
+  - name: app_db
+    owner: tomcat
+  - name: books_store
+    owner: tomcat
