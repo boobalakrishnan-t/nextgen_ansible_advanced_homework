@@ -3,3 +3,5 @@
   service:
     name: "{{ postgres_service }}"
     state: restarted
+  tags:
+    - postgres
